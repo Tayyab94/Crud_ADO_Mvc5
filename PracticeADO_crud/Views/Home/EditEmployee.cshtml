@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "EditEmployee";
+}
+
+<h2>EditEmployee</h2>
+
+@{ 
+    foreach (System.Data.DataRow item in ViewBag.emp.Rows)
+    {
+    <form class="" method="post" action="@Url.Action("EditEmployee",
+                                                "Home")">
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Name</label>
+            <div class="col-lg-9">
+                <input value="@item["emp_name"]" name="name" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">City</label>
+            <div class="col-lg-9">
+                <input value="@item["emp_city"]" name="city" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Department</label>
+            <div class="col-lg-9">
+                <input value="@item["emp_department"]" name="department" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Name</label>
+            <div class="col-lg-9">
+                <input value="@item["emp_pincode"]" name="pin" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-9">
+                <input type="submit"  value="Send"/>
+            </div>
+        </div>
+
+    </form>
+    }
+}
+
